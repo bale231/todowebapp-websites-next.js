@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex items-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo-dark.png" alt="Tasky" className="h-7 w-auto opacity-80" />
+            <img src="/logo-dark.png" alt="ToDoWebApp" className="h-7 w-auto opacity-80" />
           </div>
 
           {/* Links */}

@@ -24,7 +24,7 @@ export default function Navbar() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/logo-dark.png"
-            alt="Tasky"
+            alt="ToDoWebApp"
             className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
           />
         </Link>

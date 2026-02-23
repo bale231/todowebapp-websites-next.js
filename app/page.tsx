@@ -48,7 +48,7 @@ const features = [
     color: "green",
     title: "Funziona Offline (PWA)",
     description:
-      "Installa Tasky su qualsiasi dispositivo e continua a lavorare anche senza internet. I dati si sincronizzano automaticamente quando torni online.",
+      "Installa ToDoWebApp su qualsiasi dispositivo e continua a lavorare anche senza internet. I dati si sincronizzano automaticamente quando torni online.",
   },
   {
     icon: Shield,
@@ -133,7 +133,7 @@ export default function HomePage() {
           </h1>
 
           <p className="anim-fade-in-up delay-200 text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Tasky è un&apos;app moderna di gestione task con collaborazione in tempo reale,
+            ToDoWebApp è un&apos;app moderna di gestione task con collaborazione in tempo reale,
             richieste di amicizia, supporto offline e un&apos;interfaccia glassmorphism
             — costruita con React + Django.
           </p>
@@ -168,7 +168,7 @@ export default function HomePage() {
               <div className="w-3 h-3 rounded-full bg-red-400/70" />
               <div className="w-3 h-3 rounded-full bg-yellow-400/70" />
               <div className="w-3 h-3 rounded-full bg-green-400/70" />
-              <span className="ml-4 text-xs text-slate-500 font-mono">tasky — dashboard</span>
+              <span className="ml-4 text-xs text-slate-500 font-mono">todowebapp — dashboard</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
@@ -211,7 +211,7 @@ export default function HomePage() {
               Tutto quello che ti serve
             </h2>
             <p className="text-slate-400 max-w-xl mx-auto">
-              Tasky mette tutto ciò di cui una persona produttiva ha bisogno in
+              ToDoWebApp mette tutto ciò di cui una persona produttiva ha bisogno in
               un&apos;interfaccia pulita, veloce e bella.
             </p>
           </AnimateIn>
@@ -243,7 +243,7 @@ export default function HomePage() {
               Anteprima
             </p>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-              Vedi Tasky in azione
+              Vedi ToDoWebApp in azione
             </h2>
             <p className="text-slate-400 max-w-xl mx-auto">
               Un&apos;interfaccia pulita e moderna, ottimizzata per ogni dispositivo.
@@ -352,7 +352,7 @@ export default function HomePage() {
                 </h2>
 
                 <p className="text-slate-400 max-w-lg mx-auto mb-10 text-lg leading-relaxed">
-                  Tasky è una Progressive Web App. Nessuno store, nessun download pesante:
+                  ToDoWebApp è una Progressive Web App. Nessuno store, nessun download pesante:
                   aprila dal browser e aggiungila alla tua schermata home in un tap.
                 </p>
 

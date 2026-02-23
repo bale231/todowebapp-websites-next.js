@@ -4,7 +4,7 @@ const sections = [
   {
     id: "introduzione",
     title: "1. Introduzione",
-    content: `Benvenuto su Tasky ("noi", "nostro"). Questa Informativa sulla Privacy spiega come raccogliamo, utilizziamo, divulghiamo e proteggiamo le tue informazioni quando utilizzi la nostra applicazione web e i servizi correlati (collettivamente il "Servizio"). Accedendo o utilizzando Tasky, accetti i termini di questa Informativa. Se non sei d'accordo, ti invitiamo a interrompere l'utilizzo del Servizio.`,
+    content: `Benvenuto su ToDoWebApp ("noi", "nostro"). Questa Informativa sulla Privacy spiega come raccogliamo, utilizziamo, divulghiamo e proteggiamo le tue informazioni quando utilizzi la nostra applicazione web e i servizi correlati (collettivamente il "Servizio"). Accedendo o utilizzando ToDoWebApp, accetti i termini di questa Informativa. Se non sei d'accordo, ti invitiamo a interrompere l'utilizzo del Servizio.`,
   },
   {
     id: "dati-raccolti",
@@ -35,7 +35,7 @@ const sections = [
     title: "3. Come Utilizziamo le Tue Informazioni",
     items: [
       "Per creare e gestire il tuo account e autenticare le sessioni.",
-      "Per fornire, mantenere e migliorare le funzionalità principali di Tasky, inclusa la gestione dei task e la collaborazione tra amici.",
+      "Per fornire, mantenere e migliorare le funzionalità principali di ToDoWebApp, inclusa la gestione dei task e la collaborazione tra amici.",
       "Per inviare email transazionali come verifica dell'email, link di reset password e avvisi di notifica.",
       "Per rispondere alle tue richieste e ai messaggi di supporto.",
       "Per monitorare e analizzare i pattern di utilizzo al fine di migliorare le prestazioni e la sicurezza.",
@@ -49,14 +49,14 @@ const sections = [
     items: [
       "Fornitori di servizi: terze parti che ci assistono nell'operare il Servizio (es. Firebase per autenticazione e storage, provider di hosting), vincolati da accordi di riservatezza.",
       "Obblighi legali: quando richiesto dalla legge, da normative o da un valido procedimento legale (es. citazione in giudizio o ordine del tribunale).",
-      "Sicurezza: per proteggere i diritti, la proprietà o la sicurezza di Tasky, dei nostri utenti o del pubblico.",
+      "Sicurezza: per proteggere i diritti, la proprietà o la sicurezza di ToDoWebApp, dei nostri utenti o del pubblico.",
       "Trasferimenti aziendali: in caso di fusione, acquisizione o vendita di asset, le tue informazioni potrebbero essere trasferite come parte di tale transazione.",
     ],
   },
   {
     id: "firebase",
     title: "5. Firebase e Servizi di Terze Parti",
-    content: `Tasky utilizza Google Firebase per l'autenticazione degli utenti e l'archiviazione dei file. Firebase potrebbe raccogliere determinati dati tecnici come descritto nell'Informativa sulla Privacy di Google. Ti consigliamo di consultare l'Informativa di Google all'indirizzo https://policies.google.com/privacy. Utilizziamo inoltre EmailJS per elaborare le richieste inviate tramite il modulo di contatto. I messaggi inviati attraverso tale modulo vengono gestiti secondo le pratiche sulla privacy di EmailJS.`,
+    content: `ToDoWebApp utilizza Google Firebase per l'autenticazione degli utenti e l'archiviazione dei file. Firebase potrebbe raccogliere determinati dati tecnici come descritto nell'Informativa sulla Privacy di Google. Ti consigliamo di consultare l'Informativa di Google all'indirizzo https://policies.google.com/privacy. Utilizziamo inoltre EmailJS per elaborare le richieste inviate tramite il modulo di contatto. I messaggi inviati attraverso tale modulo vengono gestiti secondo le pratiche sulla privacy di EmailJS.`,
   },
   {
     id: "cookie",
@@ -97,7 +97,7 @@ const sections = [
   {
     id: "minori",
     title: "10. Privacy dei Minori",
-    content: `Tasky non è destinato a bambini di età inferiore ai 13 anni. Non raccogliamo consapevolmente informazioni personali da bambini under 13. Se veniamo a sapere che un bambino under 13 ha fornito dati personali, adotteremo misure per eliminare tali informazioni tempestivamente. Se ritieni che un minore di 13 anni abbia inviato dati al Servizio, contattaci immediatamente.`,
+    content: `ToDoWebApp non è destinato a bambini di età inferiore ai 13 anni. Non raccogliamo consapevolmente informazioni personali da bambini under 13. Se veniamo a sapere che un bambino under 13 ha fornito dati personali, adotteremo misure per eliminare tali informazioni tempestivamente. Se ritieni che un minore di 13 anni abbia inviato dati al Servizio, contattaci immediatamente.`,
   },
   {
     id: "modifiche",

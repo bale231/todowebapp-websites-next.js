@@ -4,14 +4,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Tasky — Gestisci i tuoi Task",
+  title: "ToDoWebApp — Gestisci i tuoi Task",
   description:
-    "Tasky è un'app moderna e collaborativa per la gestione dei task. Organizza il tuo lavoro, collabora con gli amici e rimani produttivo.",
+    "ToDoWebApp è un'app moderna e collaborativa per la gestione dei task. Organizza il tuo lavoro, collabora con gli amici e rimani produttivo.",
   keywords: ["todo", "gestione task", "produttività", "collaborativo", "web app"],
   openGraph: {
-    title: "Tasky — Gestisci i tuoi Task",
+    title: "ToDoWebApp — Gestisci i tuoi Task",
     description:
-      "Organizza il tuo lavoro, collabora con gli amici e rimani produttivo con Tasky.",
+      "Organizza il tuo lavoro, collabora con gli amici e rimani produttivo con ToDoWebApp.",
     type: "website",
   },
 };
