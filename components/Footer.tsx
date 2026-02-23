@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, CheckSquare } from "lucide-react";
+import { Github } from "lucide-react";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -9,11 +9,9 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand */}
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-blue-500/20 border border-blue-400/30 flex items-center justify-center">
-              <CheckSquare className="w-3.5 h-3.5 text-blue-400" />
-            </div>
-            <span className="font-bold gradient-text">Tasky</span>
+          <div className="flex items-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-dark.png" alt="Tasky" className="h-7 w-auto opacity-80" />
           </div>
 
           {/* Links */}

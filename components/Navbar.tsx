@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X, CheckSquare } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -20,11 +20,13 @@ export default function Navbar() {
       {/* Main bar */}
       <div className="max-w-6xl mx-auto bg-slate-900/70 backdrop-blur-xl border border-white/[0.1] shadow-lg rounded-2xl px-6 py-3 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-blue-500/20 border border-blue-400/30 flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
-            <CheckSquare className="w-4 h-4 text-blue-400" />
-          </div>
-          <span className="font-bold text-lg gradient-text">Tasky</span>
+        <Link href="/" className="flex items-center group">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo-dark.png"
+            alt="Tasky"
+            className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+          />
         </Link>
 
         {/* Desktop links */}

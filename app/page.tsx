@@ -10,9 +10,16 @@ import {
   ListTodo,
   UserCheck,
   RefreshCw,
+  Download,
+  Monitor,
 } from "lucide-react";
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
+
+// ─────────────────────────────────────────────────────────────
+// TODO: Inserisci l'URL della tua webapp deployata su Vercel
+// ─────────────────────────────────────────────────────────────
+const APP_URL = "#";
 
 const features = [
   {
@@ -95,6 +102,14 @@ const colorMap: Record<string, string> = {
   orange: "bg-orange-500/10 border-orange-500/20 text-orange-400",
 };
 
+// Screenshot names — replace src with real paths when ready
+// e.g. <img src="/screenshots/screen-1.png" alt="..." className="w-full h-full object-cover object-top" />
+const screenshots = [
+  { label: "Home & Liste", src: "/screenshots/screen-1.png" },
+  { label: "Dettaglio Task", src: "/screenshots/screen-2.png" },
+  { label: "Profilo & Amici", src: "/screenshots/screen-3.png" },
+];
+
 export default function HomePage() {
   return (
     <div className="bg-gradient-animated min-h-screen relative">
@@ -106,7 +121,6 @@ export default function HomePage() {
       {/* ─── HERO ─── */}
       <section className="relative pt-40 pb-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
           <div className="anim-fade-in inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8 text-sm text-slate-300">
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
             Open Source · Gratuito
@@ -124,38 +138,38 @@ export default function HomePage() {
             — costruita con React + Django.
           </p>
 
-          {/* CTA buttons */}
           <div className="anim-fade-in-up delay-300 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://github.com/bale231/todowebapp-frontend-reactts"
+              href={APP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-0.5 text-sm md:text-base"
             >
-              <Github className="w-5 h-5" />
-              Vedi il Codice Sorgente
+              <Download className="w-5 h-5" />
+              Scarica l&apos;app
               <ArrowRight className="w-4 h-4" />
             </a>
-            <Link
-              href="/contacts"
+            <a
+              href="https://github.com/bale231/todowebapp-frontend-reactts"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-8 py-4 glass hover:bg-white/10 text-slate-300 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-sm md:text-base"
             >
-              Contattaci
-            </Link>
+              <Github className="w-5 h-5" />
+              Codice Sorgente
+            </a>
           </div>
         </div>
 
         {/* Hero glass card preview */}
         <div className="anim-scale-in delay-500 max-w-3xl mx-auto mt-20">
           <div className="glass-strong rounded-3xl p-6 glow-blue">
-            {/* Fake window chrome */}
             <div className="flex items-center gap-2 mb-6">
               <div className="w-3 h-3 rounded-full bg-red-400/70" />
               <div className="w-3 h-3 rounded-full bg-yellow-400/70" />
               <div className="w-3 h-3 rounded-full bg-green-400/70" />
               <span className="ml-4 text-xs text-slate-500 font-mono">tasky — dashboard</span>
             </div>
-            {/* Fake UI */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 { label: "Lavoro", color: "blue", tasks: ["Nuovo design UI", "Revisiona PR #42", "Deploy v2.1"] },
@@ -170,7 +184,7 @@ export default function HomePage() {
                   <div className="space-y-2">
                     {list.tasks.map((task, i) => (
                       <div key={task} className="flex items-center gap-2">
-                        <div className={`w-4 h-4 rounded border flex-shrink-0 flex items-center justify-center ${i === 0 ? `${colorMap[list.color]}` : "border-white/10"}`}>
+                        <div className={`w-4 h-4 rounded border flex-shrink-0 flex items-center justify-center ${i === 0 ? colorMap[list.color] : "border-white/10"}`}>
                           {i === 0 && <CheckSquare className="w-2.5 h-2.5" />}
                         </div>
                         <span className={`text-xs ${i === 0 ? "line-through text-slate-500" : "text-slate-300"}`}>
@@ -221,6 +235,70 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ─── SCREENSHOTS ─── */}
+      <section className="relative px-6 py-24">
+        <div className="max-w-6xl mx-auto">
+          <AnimateIn className="text-center mb-16" animation="fade">
+            <p className="text-green-400 font-semibold text-sm uppercase tracking-widest mb-3">
+              Anteprima
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              Vedi Tasky in azione
+            </h2>
+            <p className="text-slate-400 max-w-xl mx-auto">
+              Un&apos;interfaccia pulita e moderna, ottimizzata per ogni dispositivo.
+            </p>
+          </AnimateIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
+            {screenshots.map((screen, i) => (
+              <AnimateIn key={screen.label} delay={i * 120} animation="up">
+                {/* Phone frame */}
+                <div className={`mx-auto transition-transform duration-300 hover:-translate-y-2 ${i === 1 ? "md:-translate-y-6" : ""}`}
+                  style={{ maxWidth: 220 }}>
+                  <div className="bg-slate-800 rounded-[2.5rem] p-[5px] border border-white/10 shadow-2xl shadow-black/60">
+                    {/* Side buttons */}
+                    <div className="relative">
+                      <div className="absolute top-14 -right-[4px] w-[4px] h-10 bg-slate-700 rounded-r-sm" />
+                      <div className="absolute top-10 -left-[4px] w-[4px] h-6 bg-slate-700 rounded-l-sm" />
+                      <div className="absolute top-20 -left-[4px] w-[4px] h-10 bg-slate-700 rounded-l-sm" />
+                      {/* Screen */}
+                      <div className="bg-slate-950 rounded-[2.2rem] overflow-hidden aspect-[9/19]">
+                        {/* Notch */}
+                        <div className="flex justify-center pt-2.5">
+                          <div className="w-20 h-[10px] bg-black rounded-full" />
+                        </div>
+                        {/*
+                         * ─── INSERISCI LO SCREENSHOT QUI ───────────────────────────
+                         * Sostituisci il div placeholder con un tag <img>:
+                         *   <img
+                         *     src={screen.src}
+                         *     alt={screen.label}
+                         *     className="w-full h-full object-cover object-top"
+                         *   />
+                         * ────────────────────────────────────────────────────────────
+                         */}
+                        <div className="w-full h-[calc(100%-22px)] flex flex-col items-center justify-center gap-3 border-2 border-dashed border-white/5 mx-1 rounded-b-[2rem]">
+                          <Smartphone className="w-8 h-8 text-slate-700" />
+                          <p className="text-slate-600 text-[11px] font-mono text-center px-3 leading-snug">
+                            {screen.label}
+                          </p>
+                          <p className="text-slate-700 text-[10px] font-mono text-center px-3">
+                            {screen.src}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Label below phone */}
+                  <p className="text-center text-slate-500 text-xs mt-4 font-medium">{screen.label}</p>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── HOW IT WORKS ─── */}
       <section className="relative px-6 py-24">
         <div className="max-w-5xl mx-auto">
@@ -255,6 +333,69 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ─── SCARICA L'APP ─── */}
+      <section className="relative px-6 py-24">
+        <div className="max-w-4xl mx-auto">
+          <AnimateIn animation="scale">
+            <div className="glass-strong rounded-3xl p-10 glow-blue relative overflow-hidden">
+              {/* Decorative orb inside */}
+              <div className="absolute -top-12 -right-12 w-48 h-48 bg-blue-600 opacity-10 rounded-full blur-3xl pointer-events-none" />
+
+              <div className="relative text-center">
+                <div className="inline-flex w-16 h-16 rounded-2xl bg-blue-500/20 border border-blue-400/30 items-center justify-center mx-auto mb-6">
+                  <Download className="w-8 h-8 text-blue-400" />
+                </div>
+
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                  Scarica l&apos;app{" "}
+                  <span className="gradient-text">ora!</span>
+                </h2>
+
+                <p className="text-slate-400 max-w-lg mx-auto mb-10 text-lg leading-relaxed">
+                  Tasky è una Progressive Web App. Nessuno store, nessun download pesante:
+                  aprila dal browser e aggiungila alla tua schermata home in un tap.
+                </p>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                  <a
+                    href={APP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-10 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all duration-200 hover:shadow-2xl hover:shadow-blue-500/40 hover:-translate-y-0.5 text-lg"
+                  >
+                    <Download className="w-6 h-6" />
+                    Apri e Installa
+                    <ArrowRight className="w-5 h-5" />
+                  </a>
+                  <Link
+                    href="/contacts"
+                    className="flex items-center gap-2 px-8 py-4 glass hover:bg-white/10 text-slate-300 hover:text-white font-semibold rounded-2xl transition-all duration-200"
+                  >
+                    Hai domande?
+                  </Link>
+                </div>
+
+                {/* Platform badges */}
+                <div className="flex items-center justify-center gap-5 text-slate-500 text-sm flex-wrap">
+                  <div className="flex items-center gap-2 glass rounded-xl px-3 py-2">
+                    <Smartphone className="w-4 h-4 text-slate-400" />
+                    <span>iOS</span>
+                  </div>
+                  <div className="flex items-center gap-2 glass rounded-xl px-3 py-2">
+                    <Smartphone className="w-4 h-4 text-slate-400" />
+                    <span>Android</span>
+                  </div>
+                  <div className="flex items-center gap-2 glass rounded-xl px-3 py-2">
+                    <Monitor className="w-4 h-4 text-slate-400" />
+                    <span>Desktop</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
       {/* ─── TECH STACK ─── */}
       <section className="relative px-6 py-20">
         <div className="max-w-4xl mx-auto">
@@ -268,18 +409,9 @@ export default function HomePage() {
               </h2>
               <div className="flex flex-wrap justify-center gap-3">
                 {[
-                  "React 19",
-                  "TypeScript",
-                  "Tailwind CSS",
-                  "Django REST",
-                  "Python",
-                  "Firebase",
-                  "IndexedDB (Dexie)",
-                  "Vite",
-                  "GSAP",
-                  "PWA",
-                  "JWT Auth",
-                  "DnD Kit",
+                  "React 19", "TypeScript", "Tailwind CSS", "Django REST",
+                  "Python", "Firebase", "IndexedDB (Dexie)", "Vite",
+                  "GSAP", "PWA", "JWT Auth", "DnD Kit",
                 ].map((tech) => (
                   <span
                     key={tech}
@@ -294,7 +426,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── CTA SECTION ─── */}
+      {/* ─── CTA FINALE ─── */}
       <section className="relative px-6 py-24">
         <div className="max-w-3xl mx-auto text-center">
           <AnimateIn animation="up">
