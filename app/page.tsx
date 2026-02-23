@@ -12,6 +12,7 @@ import {
   RefreshCw,
   Download,
   Monitor,
+  BookOpen,
 } from "lucide-react";
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
@@ -20,6 +21,8 @@ import AnimateIn from "@/components/AnimateIn";
 // TODO: Inserisci l'URL della tua webapp deployata su Vercel
 // ─────────────────────────────────────────────────────────────
 const APP_URL = "https://todowebapp-frontend-reactts-stml.vercel.app/";
+const GUIDE_URL =
+  "https://raw.githubusercontent.com/bale231/todowebapp-frontend-reactts/main/GUIDA_UTENTE_TODOAPP.pdf";
 
 const features = [
   {
@@ -390,6 +393,48 @@ export default function HomePage() {
                     <span>Desktop</span>
                   </div>
                 </div>
+              </div>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ─── GUIDA UTENTE ─── */}
+      <section className="relative px-6 py-16">
+        <div className="max-w-4xl mx-auto">
+          <AnimateIn animation="up">
+            <div className="glass rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
+              {/* Icon */}
+              <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center">
+                <BookOpen className="w-10 h-10 text-purple-400" />
+              </div>
+
+              {/* Text */}
+              <div className="flex-1 text-center md:text-left">
+                <p className="text-purple-400 font-semibold text-sm uppercase tracking-widest mb-2">
+                  Documentazione
+                </p>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  Guida Utente
+                </h2>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Scarica la guida completa in PDF per imparare a usare ToDoWebApp al meglio:
+                  dalla registrazione alla gestione avanzata dei task, passando per le funzioni social.
+                </p>
+              </div>
+
+              {/* Button */}
+              <div className="flex-shrink-0">
+                <a
+                  href={GUIDE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="GUIDA_UTENTE_TODOAPP.pdf"
+                  className="flex items-center gap-3 px-7 py-4 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-purple-500/30 hover:-translate-y-0.5 whitespace-nowrap"
+                >
+                  <Download className="w-5 h-5" />
+                  Scarica PDF
+                </a>
               </div>
             </div>
           </AnimateIn>
