@@ -21,8 +21,7 @@ import AnimateIn from "@/components/AnimateIn";
 // TODO: Inserisci l'URL della tua webapp deployata su Vercel
 // ─────────────────────────────────────────────────────────────
 const APP_URL = "https://todowebapp-frontend-reactts-stml.vercel.app/";
-const GUIDE_URL =
-  "https://raw.githubusercontent.com/bale231/todowebapp-frontend-reactts/main/GUIDA_UTENTE_TODOAPP.pdf";
+const GUIDE_URL = "/GUIDA_UTENTE_TODOAPP.pdf";
 
 const features = [
   {
