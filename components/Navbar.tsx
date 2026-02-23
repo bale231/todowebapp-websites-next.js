@@ -17,7 +17,8 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 py-4">
-      <div className="max-w-6xl mx-auto glass rounded-2xl px-6 py-3 flex items-center justify-between">
+      {/* Main bar */}
+      <div className="max-w-6xl mx-auto bg-slate-900/70 backdrop-blur-xl border border-white/[0.1] shadow-lg rounded-2xl px-6 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <div className="w-8 h-8 rounded-lg bg-blue-500/20 border border-blue-400/30 flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
@@ -65,9 +66,9 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile dropdown */}
       {menuOpen && (
-        <div className="md:hidden mt-2 max-w-6xl mx-auto glass rounded-2xl px-4 py-4 flex flex-col gap-1">
+        <div className="md:hidden mt-2 max-w-6xl mx-auto bg-slate-900/80 backdrop-blur-xl border border-white/[0.1] shadow-xl rounded-2xl px-4 py-4 flex flex-col gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
