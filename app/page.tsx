@@ -19,7 +19,7 @@ import AnimateIn from "@/components/AnimateIn";
 // ─────────────────────────────────────────────────────────────
 // TODO: Inserisci l'URL della tua webapp deployata su Vercel
 // ─────────────────────────────────────────────────────────────
-const APP_URL = "#";
+const APP_URL = "https://todowebapp-frontend-reactts-stml.vercel.app/";
 
 const features = [
   {
