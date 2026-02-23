@@ -22,10 +22,10 @@ export default function Footer() {
               Home
             </Link>
             <Link href="/contacts" className="hover:text-slate-300 transition-colors">
-              Contacts
+              Contatti
             </Link>
             <Link href="/privacy-policy" className="hover:text-slate-300 transition-colors">
-              Privacy Policy
+              Privacy
             </Link>
           </div>
 
@@ -38,7 +38,7 @@ export default function Footer() {
           >
             <Github className="w-4 h-4 group-hover:text-blue-400 transition-colors" />
             <span>
-              Created by{" "}
+              Creato da{" "}
               <span className="text-blue-400 font-medium">Bale231</span>
               {" "}· {year}
             </span>

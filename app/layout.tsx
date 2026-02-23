@@ -4,14 +4,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Tasky — Smart Todo & Task Manager",
+  title: "Tasky — Gestisci i tuoi Task",
   description:
-    "Tasky is a modern, collaborative todo and task management web app. Organize your work, collaborate with friends, and stay productive.",
-  keywords: ["todo", "task manager", "productivity", "collaborative", "web app"],
+    "Tasky è un'app moderna e collaborativa per la gestione dei task. Organizza il tuo lavoro, collabora con gli amici e rimani produttivo.",
+  keywords: ["todo", "gestione task", "produttività", "collaborativo", "web app"],
   openGraph: {
-    title: "Tasky — Smart Todo & Task Manager",
+    title: "Tasky — Gestisci i tuoi Task",
     description:
-      "Organize your work, collaborate with friends, and stay productive with Tasky.",
+      "Organizza il tuo lavoro, collabora con gli amici e rimani produttivo con Tasky.",
     type: "website",
   },
 };
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="it">
       <body className="antialiased">
         <Navbar />
         <main>{children}</main>

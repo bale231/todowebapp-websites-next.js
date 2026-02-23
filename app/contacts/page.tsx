@@ -4,10 +4,6 @@ import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Mail, Send, Github, MessageSquare, CheckCircle, AlertCircle } from "lucide-react";
 
-// ─────────────────────────────────────────────────────────
-// Configure these three values with your EmailJS credentials
-// See README or the instructions below to obtain them
-// ─────────────────────────────────────────────────────────
 const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "";
 const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
 const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "";
@@ -53,15 +49,14 @@ export default function ContactsPage() {
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-6 text-sm text-slate-300">
             <MessageSquare className="w-4 h-4 text-blue-400" />
-            Get in touch
+            Contattaci
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4">
-            Let&apos;s{" "}
-            <span className="gradient-text">talk</span>
+            Par<span className="gradient-text">liamo</span>
           </h1>
           <p className="text-slate-400 max-w-lg mx-auto text-lg">
-            Have a question, a collaboration idea, or just want to say hi? Send me a
-            message and I&apos;ll get back to you.
+            Hai una domanda, un&apos;idea di collaborazione o vuoi semplicemente salutare?
+            Mandami un messaggio e ti rispondo il prima possibile.
           </p>
         </div>
 
@@ -75,7 +70,7 @@ export default function ContactsPage() {
               </div>
               <h3 className="text-white font-semibold mb-1">Email</h3>
               <p className="text-slate-400 text-sm">
-                Fill in the form and your message will land directly in my inbox.
+                Compila il modulo e il tuo messaggio arriverà direttamente nella mia inbox.
               </p>
             </div>
 
@@ -86,7 +81,7 @@ export default function ContactsPage() {
               </div>
               <h3 className="text-white font-semibold mb-1">GitHub</h3>
               <p className="text-slate-400 text-sm mb-3">
-                Found a bug or want to contribute? Open an issue or PR on GitHub.
+                Trovato un bug o vuoi contribuire? Apri un issue o una PR su GitHub.
               </p>
               <a
                 href="https://github.com/bale231"
@@ -101,7 +96,7 @@ export default function ContactsPage() {
 
             {/* Repo links */}
             <div className="glass rounded-2xl p-6">
-              <h3 className="text-white font-semibold mb-3">Repositories</h3>
+              <h3 className="text-white font-semibold mb-3">Repository</h3>
               <div className="flex flex-col gap-2">
                 <a
                   href="https://github.com/bale231/todowebapp-frontend-reactts"
@@ -133,28 +128,28 @@ export default function ContactsPage() {
                   <div className="w-16 h-16 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center">
                     <CheckCircle className="w-8 h-8 text-green-400" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Message sent!</h3>
+                  <h3 className="text-2xl font-bold text-white">Messaggio inviato!</h3>
                   <p className="text-slate-400 max-w-xs">
-                    Thanks for reaching out. I&apos;ll get back to you as soon as possible.
+                    Grazie per avermi contattato. Ti rispondo il prima possibile.
                   </p>
                   <button
                     onClick={() => setStatus("idle")}
                     className="mt-4 px-6 py-3 glass hover:bg-white/10 text-slate-300 hover:text-white font-medium rounded-xl transition-all"
                   >
-                    Send another message
+                    Invia un altro messaggio
                   </button>
                 </div>
               ) : (
                 <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-sm text-slate-400 font-medium">Name</label>
+                      <label className="text-sm text-slate-400 font-medium">Nome</label>
                       <input
                         name="name"
                         value={form.name}
                         onChange={handleChange}
                         required
-                        placeholder="Your name"
+                        placeholder="Il tuo nome"
                         className="glass rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:ring-2 focus:ring-blue-500/50 transition-all"
                       />
                     </div>
@@ -166,33 +161,33 @@ export default function ContactsPage() {
                         value={form.email}
                         onChange={handleChange}
                         required
-                        placeholder="your@email.com"
+                        placeholder="tua@email.com"
                         className="glass rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:ring-2 focus:ring-blue-500/50 transition-all"
                       />
                     </div>
                   </div>
 
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-sm text-slate-400 font-medium">Subject</label>
+                    <label className="text-sm text-slate-400 font-medium">Oggetto</label>
                     <input
                       name="subject"
                       value={form.subject}
                       onChange={handleChange}
                       required
-                      placeholder="What's this about?"
+                      placeholder="Di cosa si tratta?"
                       className="glass rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:ring-2 focus:ring-blue-500/50 transition-all"
                     />
                   </div>
 
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-sm text-slate-400 font-medium">Message</label>
+                    <label className="text-sm text-slate-400 font-medium">Messaggio</label>
                     <textarea
                       name="message"
                       value={form.message}
                       onChange={handleChange}
                       required
                       rows={6}
-                      placeholder="Write your message here..."
+                      placeholder="Scrivi qui il tuo messaggio..."
                       className="glass rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm resize-none focus:ring-2 focus:ring-blue-500/50 transition-all"
                     />
                   </div>
@@ -200,7 +195,7 @@ export default function ContactsPage() {
                   {status === "error" && (
                     <div className="flex items-center gap-2 text-red-400 text-sm bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3">
                       <AlertCircle className="w-4 h-4 flex-shrink-0" />
-                      Something went wrong. Please try again or contact me via GitHub.
+                      Si è verificato un errore. Riprova o contattami tramite GitHub.
                     </div>
                   )}
 
@@ -212,12 +207,12 @@ export default function ContactsPage() {
                     {status === "sending" ? (
                       <>
                         <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        Sending...
+                        Invio in corso...
                       </>
                     ) : (
                       <>
                         <Send className="w-4 h-4" />
-                        Send Message
+                        Invia Messaggio
                       </>
                     )}
                   </button>

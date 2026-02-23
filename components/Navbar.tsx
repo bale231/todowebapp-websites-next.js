@@ -7,8 +7,8 @@ import { Menu, X, CheckSquare } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/contacts", label: "Contacts" },
-  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/contacts", label: "Contatti" },
+  { href: "/privacy-policy", label: "Privacy" },
 ];
 
 export default function Navbar() {
@@ -51,7 +51,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25"
           >
-            View on GitHub
+            GitHub
           </a>
         </div>
 
@@ -59,7 +59,7 @@ export default function Navbar() {
         <button
           className="md:hidden text-slate-400 hover:text-white p-1"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label="Apri menu"
         >
           {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -88,7 +88,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="mt-2 px-4 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold text-center transition-all"
           >
-            View on GitHub
+            Vedi su GitHub
           </a>
         </div>
       )}
