@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
+import DownloadSection from "@/components/DownloadSection";
 
 // ─────────────────────────────────────────────────────────────
 // TODO: Inserisci l'URL della tua webapp deployata su Vercel
@@ -393,93 +394,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── SCARICA L'APP ─── */}
-      <section className="relative px-6 py-24">
-        <div className="max-w-4xl mx-auto">
-          <AnimateIn animation="scale">
-            <div className="glass-strong rounded-3xl p-10 glow-blue relative overflow-hidden">
-              {/* Decorative orb inside */}
-              <div className="absolute -top-12 -right-12 w-48 h-48 bg-blue-600 opacity-10 rounded-full blur-3xl pointer-events-none" />
-
-              <div className="relative text-center">
-                <div className="inline-flex w-16 h-16 rounded-2xl bg-blue-500/20 border border-blue-400/30 items-center justify-center mx-auto mb-6">
-                  <Download className="w-8 h-8 text-blue-400" />
-                </div>
-
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-                  Scarica l&apos;app{" "}
-                  <span className="gradient-text">ora!</span>
-                </h2>
-
-                <p className="text-slate-400 max-w-lg mx-auto mb-10 text-lg leading-relaxed">
-                  ToDoWebApp è una Progressive Web App. Nessuno store, nessun download pesante:
-                  aprila dal browser e aggiungila alla tua schermata home in un tap.
-                </p>
-
-                <div className="flex flex-col items-center gap-4 mb-8">
-                  {/* iOS + Android */}
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a
-                      href={APP_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-9 py-4 bg-zinc-800 hover:bg-zinc-700 border border-white/10 text-white font-bold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-black/40 hover:-translate-y-0.5 text-base"
-                    >
-                      <AppleIcon className="w-5 h-5" />
-                      Per iOS
-                    </a>
-                    <a
-                      href={APP_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-9 py-4 bg-[#1a9e52] hover:bg-[#168a47] text-white font-bold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-[#1a9e52]/30 hover:-translate-y-0.5 text-base"
-                    >
-                      <AndroidIcon className="w-5 h-5" />
-                      Per Android
-                    </a>
-                  </div>
-
-                  {/* Windows + domande */}
-                  <div className="flex flex-col items-center gap-1.5">
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                      <a
-                        href={WINDOWS_URL}
-                        download="ToDoApp.Setup.1.2.0.exe"
-                        className="flex items-center gap-2.5 px-8 py-3 bg-[#0078d4] hover:bg-[#106ebe] text-white font-semibold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-[#0078d4]/30 hover:-translate-y-0.5"
-                      >
-                        <WindowsIcon className="w-4 h-4" />
-                        Scarica per Windows
-                      </a>
-                      <Link
-                        href="/contacts"
-                        className="flex items-center gap-2 px-8 py-3 glass hover:bg-white/10 text-slate-300 hover:text-white font-semibold rounded-2xl transition-all duration-200"
-                      >
-                        Hai domande?
-                      </Link>
-                    </div>
-                    <p className="text-slate-500 text-xs">Windows 10/11 · 70 MB</p>
-                  </div>
-                </div>
-
-                {/* Platform badges */}
-                <div className="flex items-center justify-center gap-5 text-slate-500 text-sm flex-wrap">
-                  <div className="flex items-center gap-2 glass rounded-xl px-3 py-2">
-                    <AppleIcon className="w-4 h-4 text-slate-400" />
-                    <span>iOS</span>
-                  </div>
-                  <div className="flex items-center gap-2 glass rounded-xl px-3 py-2">
-                    <AndroidIcon className="w-4 h-4 text-slate-400" />
-                    <span>Android</span>
-                  </div>
-                  <div className="flex items-center gap-2 glass rounded-xl px-3 py-2">
-                    <WindowsIcon className="w-4 h-4 text-slate-400" />
-                    <span>Windows</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
+      <DownloadSection />
 
       {/* ─── GUIDA UTENTE ─── */}
       <section className="relative px-6 py-16">
