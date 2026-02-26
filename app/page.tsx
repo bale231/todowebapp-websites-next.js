@@ -22,6 +22,21 @@ import AnimateIn from "@/components/AnimateIn";
 // ─────────────────────────────────────────────────────────────
 const APP_URL = "https://todowebapp-frontend-reactts-stml.vercel.app/";
 const GUIDE_URL = "/GUIDA_UTENTE_TODOAPP.pdf";
+const WINDOWS_URL =
+  "https://github.com/bale231/todowebapp-frontend-reactts/releases/download/v1.2.0/ToDoApp.Setup.1.2.0.exe";
+
+function WindowsIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
+    </svg>
+  );
+}
 
 const features = [
   {
@@ -140,26 +155,42 @@ export default function HomePage() {
             — costruita con React + Django.
           </p>
 
-          <div className="anim-fade-in-up delay-300 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href={APP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-0.5 text-sm md:text-base"
-            >
-              <Download className="w-5 h-5" />
-              Scarica l&apos;app
-              <ArrowRight className="w-4 h-4" />
-            </a>
-            <a
-              href="https://github.com/bale231/todowebapp-frontend-reactts"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-8 py-4 glass hover:bg-white/10 text-slate-300 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-sm md:text-base"
-            >
-              <Github className="w-5 h-5" />
-              Codice Sorgente
-            </a>
+          <div className="anim-fade-in-up delay-300 flex flex-col items-center gap-4">
+            {/* Riga 1: web app + codice sorgente */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href={APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-0.5 text-sm md:text-base"
+              >
+                <Download className="w-5 h-5" />
+                Scarica l&apos;app
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="https://github.com/bale231/todowebapp-frontend-reactts"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-8 py-4 glass hover:bg-white/10 text-slate-300 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-sm md:text-base"
+              >
+                <Github className="w-5 h-5" />
+                Codice Sorgente
+              </a>
+            </div>
+
+            {/* Riga 2: Windows desktop */}
+            <div className="flex flex-col items-center gap-1.5">
+              <a
+                href={WINDOWS_URL}
+                download="ToDoApp.Setup.1.2.0.exe"
+                className="flex items-center gap-2.5 px-7 py-3 bg-[#0078d4] hover:bg-[#106ebe] text-white font-semibold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-[#0078d4]/30 hover:-translate-y-0.5 text-sm"
+              >
+                <WindowsIcon className="w-4 h-4" />
+                Scarica per Windows
+              </a>
+              <p className="text-slate-500 text-xs">Windows 10/11 · 70 MB</p>
+            </div>
           </div>
         </div>
 
@@ -358,23 +389,38 @@ export default function HomePage() {
                   aprila dal browser e aggiungila alla tua schermata home in un tap.
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                  <a
-                    href={APP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-10 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all duration-200 hover:shadow-2xl hover:shadow-blue-500/40 hover:-translate-y-0.5 text-lg"
-                  >
-                    <Download className="w-6 h-6" />
-                    Apri e Installa
-                    <ArrowRight className="w-5 h-5" />
-                  </a>
-                  <Link
-                    href="/contacts"
-                    className="flex items-center gap-2 px-8 py-4 glass hover:bg-white/10 text-slate-300 hover:text-white font-semibold rounded-2xl transition-all duration-200"
-                  >
-                    Hai domande?
-                  </Link>
+                <div className="flex flex-col items-center gap-4 mb-8">
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a
+                      href={APP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-10 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all duration-200 hover:shadow-2xl hover:shadow-blue-500/40 hover:-translate-y-0.5 text-lg"
+                    >
+                      <Download className="w-6 h-6" />
+                      Apri e Installa
+                      <ArrowRight className="w-5 h-5" />
+                    </a>
+                    <Link
+                      href="/contacts"
+                      className="flex items-center gap-2 px-8 py-4 glass hover:bg-white/10 text-slate-300 hover:text-white font-semibold rounded-2xl transition-all duration-200"
+                    >
+                      Hai domande?
+                    </Link>
+                  </div>
+
+                  {/* Windows download */}
+                  <div className="flex flex-col items-center gap-1.5">
+                    <a
+                      href={WINDOWS_URL}
+                      download="ToDoApp.Setup.1.2.0.exe"
+                      className="flex items-center gap-2.5 px-8 py-3 bg-[#0078d4] hover:bg-[#106ebe] text-white font-semibold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-[#0078d4]/30 hover:-translate-y-0.5"
+                    >
+                      <WindowsIcon className="w-4 h-4" />
+                      Scarica per Windows
+                    </a>
+                    <p className="text-slate-500 text-xs">Windows 10/11 · 70 MB</p>
+                  </div>
                 </div>
 
                 {/* Platform badges */}
@@ -388,8 +434,8 @@ export default function HomePage() {
                     <span>Android</span>
                   </div>
                   <div className="flex items-center gap-2 glass rounded-xl px-3 py-2">
-                    <Monitor className="w-4 h-4 text-slate-400" />
-                    <span>Desktop</span>
+                    <WindowsIcon className="w-4 h-4 text-slate-400" />
+                    <span>Windows</span>
                   </div>
                 </div>
               </div>
