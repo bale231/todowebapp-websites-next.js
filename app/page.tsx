@@ -195,8 +195,8 @@ export default function HomePage() {
             </div>
 
             {/* Riga 2: Windows + Codice Sorgente */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <div className="flex flex-col items-center gap-1">
+            <div className="flex flex-col items-center gap-1.5">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href={WINDOWS_URL}
                   download="ToDoApp.Setup.1.2.0.exe"
@@ -205,17 +205,17 @@ export default function HomePage() {
                   <WindowsIcon className="w-4 h-4" />
                   Scarica per Windows
                 </a>
-                <p className="text-slate-500 text-xs">Windows 10/11 · 70 MB</p>
+                <a
+                  href="https://github.com/bale231/todowebapp-frontend-reactts"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-7 py-3 glass hover:bg-white/10 text-slate-300 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-sm"
+                >
+                  <Github className="w-4 h-4" />
+                  Codice Sorgente
+                </a>
               </div>
-              <a
-                href="https://github.com/bale231/todowebapp-frontend-reactts"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-7 py-3 glass hover:bg-white/10 text-slate-300 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-sm"
-              >
-                <Github className="w-4 h-4" />
-                Codice Sorgente
-              </a>
+              <p className="text-slate-500 text-xs">Windows 10/11 · 70 MB</p>
             </div>
           </div>
         </div>
@@ -439,8 +439,8 @@ export default function HomePage() {
                   </div>
 
                   {/* Windows + domande */}
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <div className="flex flex-col items-center gap-1">
+                  <div className="flex flex-col items-center gap-1.5">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                       <a
                         href={WINDOWS_URL}
                         download="ToDoApp.Setup.1.2.0.exe"
@@ -449,14 +449,14 @@ export default function HomePage() {
                         <WindowsIcon className="w-4 h-4" />
                         Scarica per Windows
                       </a>
-                      <p className="text-slate-500 text-xs">Windows 10/11 · 70 MB</p>
+                      <Link
+                        href="/contacts"
+                        className="flex items-center gap-2 px-8 py-3 glass hover:bg-white/10 text-slate-300 hover:text-white font-semibold rounded-2xl transition-all duration-200"
+                      >
+                        Hai domande?
+                      </Link>
                     </div>
-                    <Link
-                      href="/contacts"
-                      className="flex items-center gap-2 px-8 py-3 glass hover:bg-white/10 text-slate-300 hover:text-white font-semibold rounded-2xl transition-all duration-200"
-                    >
-                      Hai domande?
-                    </Link>
+                    <p className="text-slate-500 text-xs">Windows 10/11 · 70 MB</p>
                   </div>
                 </div>
 
