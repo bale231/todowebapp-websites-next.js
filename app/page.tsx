@@ -38,6 +38,22 @@ function WindowsIcon({ className }: { className?: string }) {
   );
 }
 
+function AppleIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+    </svg>
+  );
+}
+
+function AndroidIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M17.523 15.341a.999.999 0 1 1-.001-1.997.999.999 0 0 1 .001 1.997m-11.046 0a.999.999 0 1 1-.001-1.997.999.999 0 0 1 .001 1.997m11.405-6.02 1.997-3.459a.416.416 0 0 0-.72-.416l-2.023 3.503A11.107 11.107 0 0 0 12 7.851c-1.853 0-3.59.393-5.137 1.099L4.841 5.447a.416.416 0 0 0-.72.416l1.997 3.459C3.674 10.189 2.163 12.221 2 14.583h20c-.163-2.362-1.674-4.394-4.118-5.262z" />
+    </svg>
+  );
+}
+
 const features = [
   {
     icon: ListTodo,
@@ -156,40 +172,50 @@ export default function HomePage() {
           </p>
 
           <div className="anim-fade-in-up delay-300 flex flex-col items-center gap-4">
-            {/* Riga 1: web app + codice sorgente */}
+            {/* Riga 1: iOS + Android */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href={APP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-0.5 text-sm md:text-base"
+                className="flex items-center gap-2.5 px-8 py-4 bg-zinc-800 hover:bg-zinc-700 border border-white/10 text-white font-semibold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-black/40 hover:-translate-y-0.5 text-sm md:text-base"
               >
-                <Download className="w-5 h-5" />
-                Scarica l&apos;app
-                <ArrowRight className="w-4 h-4" />
+                <AppleIcon className="w-5 h-5" />
+                Per iOS
               </a>
+              <a
+                href={APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 px-8 py-4 bg-[#1a9e52] hover:bg-[#168a47] text-white font-semibold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-[#1a9e52]/30 hover:-translate-y-0.5 text-sm md:text-base"
+              >
+                <AndroidIcon className="w-5 h-5" />
+                Per Android
+              </a>
+            </div>
+
+            {/* Riga 2: Windows + Codice Sorgente */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="flex flex-col items-center gap-1">
+                <a
+                  href={WINDOWS_URL}
+                  download="ToDoApp.Setup.1.2.0.exe"
+                  className="flex items-center gap-2.5 px-7 py-3 bg-[#0078d4] hover:bg-[#106ebe] text-white font-semibold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-[#0078d4]/30 hover:-translate-y-0.5 text-sm"
+                >
+                  <WindowsIcon className="w-4 h-4" />
+                  Scarica per Windows
+                </a>
+                <p className="text-slate-500 text-xs">Windows 10/11 · 70 MB</p>
+              </div>
               <a
                 href="https://github.com/bale231/todowebapp-frontend-reactts"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-8 py-4 glass hover:bg-white/10 text-slate-300 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-sm md:text-base"
+                className="flex items-center gap-2 px-7 py-3 glass hover:bg-white/10 text-slate-300 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-sm"
               >
-                <Github className="w-5 h-5" />
+                <Github className="w-4 h-4" />
                 Codice Sorgente
               </a>
-            </div>
-
-            {/* Riga 2: Windows desktop */}
-            <div className="flex flex-col items-center gap-1.5">
-              <a
-                href={WINDOWS_URL}
-                download="ToDoApp.Setup.1.2.0.exe"
-                className="flex items-center gap-2.5 px-7 py-3 bg-[#0078d4] hover:bg-[#106ebe] text-white font-semibold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-[#0078d4]/30 hover:-translate-y-0.5 text-sm"
-              >
-                <WindowsIcon className="w-4 h-4" />
-                Scarica per Windows
-              </a>
-              <p className="text-slate-500 text-xs">Windows 10/11 · 70 MB</p>
             </div>
           </div>
         </div>
@@ -390,47 +416,58 @@ export default function HomePage() {
                 </p>
 
                 <div className="flex flex-col items-center gap-4 mb-8">
+                  {/* iOS + Android */}
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <a
                       href={APP_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-10 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all duration-200 hover:shadow-2xl hover:shadow-blue-500/40 hover:-translate-y-0.5 text-lg"
+                      className="flex items-center gap-3 px-9 py-4 bg-zinc-800 hover:bg-zinc-700 border border-white/10 text-white font-bold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-black/40 hover:-translate-y-0.5 text-base"
                     >
-                      <Download className="w-6 h-6" />
-                      Apri e Installa
-                      <ArrowRight className="w-5 h-5" />
+                      <AppleIcon className="w-5 h-5" />
+                      Per iOS
                     </a>
+                    <a
+                      href={APP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-9 py-4 bg-[#1a9e52] hover:bg-[#168a47] text-white font-bold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-[#1a9e52]/30 hover:-translate-y-0.5 text-base"
+                    >
+                      <AndroidIcon className="w-5 h-5" />
+                      Per Android
+                    </a>
+                  </div>
+
+                  {/* Windows + domande */}
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <div className="flex flex-col items-center gap-1">
+                      <a
+                        href={WINDOWS_URL}
+                        download="ToDoApp.Setup.1.2.0.exe"
+                        className="flex items-center gap-2.5 px-8 py-3 bg-[#0078d4] hover:bg-[#106ebe] text-white font-semibold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-[#0078d4]/30 hover:-translate-y-0.5"
+                      >
+                        <WindowsIcon className="w-4 h-4" />
+                        Scarica per Windows
+                      </a>
+                      <p className="text-slate-500 text-xs">Windows 10/11 · 70 MB</p>
+                    </div>
                     <Link
                       href="/contacts"
-                      className="flex items-center gap-2 px-8 py-4 glass hover:bg-white/10 text-slate-300 hover:text-white font-semibold rounded-2xl transition-all duration-200"
+                      className="flex items-center gap-2 px-8 py-3 glass hover:bg-white/10 text-slate-300 hover:text-white font-semibold rounded-2xl transition-all duration-200"
                     >
                       Hai domande?
                     </Link>
-                  </div>
-
-                  {/* Windows download */}
-                  <div className="flex flex-col items-center gap-1.5">
-                    <a
-                      href={WINDOWS_URL}
-                      download="ToDoApp.Setup.1.2.0.exe"
-                      className="flex items-center gap-2.5 px-8 py-3 bg-[#0078d4] hover:bg-[#106ebe] text-white font-semibold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-[#0078d4]/30 hover:-translate-y-0.5"
-                    >
-                      <WindowsIcon className="w-4 h-4" />
-                      Scarica per Windows
-                    </a>
-                    <p className="text-slate-500 text-xs">Windows 10/11 · 70 MB</p>
                   </div>
                 </div>
 
                 {/* Platform badges */}
                 <div className="flex items-center justify-center gap-5 text-slate-500 text-sm flex-wrap">
                   <div className="flex items-center gap-2 glass rounded-xl px-3 py-2">
-                    <Smartphone className="w-4 h-4 text-slate-400" />
+                    <AppleIcon className="w-4 h-4 text-slate-400" />
                     <span>iOS</span>
                   </div>
                   <div className="flex items-center gap-2 glass rounded-xl px-3 py-2">
-                    <Smartphone className="w-4 h-4 text-slate-400" />
+                    <AndroidIcon className="w-4 h-4 text-slate-400" />
                     <span>Android</span>
                   </div>
                   <div className="flex items-center gap-2 glass rounded-xl px-3 py-2">
