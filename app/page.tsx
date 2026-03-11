@@ -24,7 +24,7 @@ import DownloadSection from "@/components/DownloadSection";
 const APP_URL = "https://todowebapp-frontend-reactts-stml.vercel.app/";
 const GUIDE_URL = "/GUIDA_UTENTE_TODOAPP.pdf";
 const WINDOWS_URL =
-  "https://github.com/bale231/todowebapp-frontend-reactts/releases/download/v1.2.0/ToDoApp.Setup.1.2.0.exe";
+  "https://github.com/bale231/todowebapp-frontend-reactts/releases/download/v1.2.1/ToDoApp-Setup.exe";
 
 function WindowsIcon({ className }: { className?: string }) {
   return (
