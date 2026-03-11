@@ -200,7 +200,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href={WINDOWS_URL}
-                  download="ToDoApp.Setup.1.2.0.exe"
+                  download="ToDoApp-Setup.exe"
                   className="flex items-center gap-2.5 px-7 py-3 bg-[#0078d4] hover:bg-[#106ebe] text-white font-semibold rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-[#0078d4]/30 hover:-translate-y-0.5 text-sm"
                 >
                   <WindowsIcon className="w-4 h-4" />
